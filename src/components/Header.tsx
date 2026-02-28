@@ -1,9 +1,24 @@
 import { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navLink = (href: string, label: string) => (
+    <Link
+      to={href}
+      className={`transition-colors ${
+        location.pathname === href
+          ? "text-trust-blue font-semibold"
+          : "text-trust-dark-gray hover:text-trust-blue"
+      }`}
+    >
+      {label}
+    </Link>
+  );
 
   return (
     <header className="bg-white shadow-sm border-b border-trust-gray-light/30">
@@ -24,30 +39,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="/"
-              className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-            >
-              Главная
-            </a>
-            <a
-              href="/news"
-              className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-            >
-              Новости
-            </a>
-            <a
-              href="/projects"
-              className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-            >
-              Проекты
-            </a>
-            <a
-              href="/participation"
-              className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-            >
-              Участие
-            </a>
+            {navLink("/", "Главная")}
+            {navLink("/news", "Новости")}
+            {navLink("/projects", "Проекты")}
+            {navLink("/participation", "Участие")}
             <Button className="bg-trust-green hover:bg-trust-green-dark">
               Связаться
             </Button>
@@ -66,30 +61,10 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-trust-gray-light/30">
             <nav className="flex flex-col space-y-4">
-              <a
-                href="/"
-                className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-              >
-                Главная
-              </a>
-              <a
-                href="/news"
-                className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-              >
-                Новости
-              </a>
-              <a
-                href="/projects"
-                className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-              >
-                Проекты
-              </a>
-              <a
-                href="/participation"
-                className="text-trust-dark-gray hover:text-trust-blue transition-colors"
-              >
-                Участие
-              </a>
+              {navLink("/", "Главная")}
+              {navLink("/news", "Новости")}
+              {navLink("/projects", "Проекты")}
+              {navLink("/participation", "Участие")}
               <Button className="bg-trust-green hover:bg-trust-green-dark w-full">
                 Связаться
               </Button>

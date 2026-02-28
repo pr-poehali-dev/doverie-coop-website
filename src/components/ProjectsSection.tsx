@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -60,7 +61,7 @@ const ProjectsSection = () => {
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-12 h-12 bg-trust-green/10 rounded-lg flex items-center justify-center">
                     <Icon
-                      name={project.icon as any}
+                      name={project.icon}
                       size={24}
                       className="text-trust-green"
                     />
@@ -103,10 +104,12 @@ const ProjectsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="bg-trust-green hover:bg-trust-green-dark">
-            <Icon name="FolderOpen" size={20} className="mr-2" />
-            Все проекты
-          </Button>
+          <Link to="/projects">
+            <Button className="bg-trust-green hover:bg-trust-green-dark">
+              <Icon name="FolderOpen" size={20} className="mr-2" />
+              Все проекты
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
