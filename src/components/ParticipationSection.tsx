@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -51,7 +52,7 @@ const ParticipationSection = () => {
               <CardHeader>
                 <div className="w-16 h-16 bg-gradient-to-br from-trust-blue to-trust-green rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon
-                    name={benefit.icon as any}
+                    name={benefit.icon}
                     size={28}
                     className="text-white"
                   />
@@ -107,13 +108,15 @@ const ParticipationSection = () => {
               </div>
             </div>
             <div className="text-center">
-              <Button
-                size="lg"
-                className="bg-trust-green hover:bg-trust-green-dark w-full md:w-auto px-8 py-3"
-              >
-                <Icon name="UserPlus" size={20} className="mr-2" />
-                Подать заявку
-              </Button>
+              <Link to="/participation">
+                <Button
+                  size="lg"
+                  className="bg-trust-green hover:bg-trust-green-dark w-full md:w-auto px-8 py-3"
+                >
+                  <Icon name="UserPlus" size={20} className="mr-2" />
+                  Узнать об участии
+                </Button>
+              </Link>
               <p className="text-sm text-trust-gray mt-3">
                 Или позвоните нам: +7 (495) 123-45-67
               </p>
