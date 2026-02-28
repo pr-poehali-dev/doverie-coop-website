@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -79,10 +80,12 @@ const NewsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="bg-trust-blue hover:bg-trust-blue-dark">
-            <Icon name="Newspaper" size={20} className="mr-2" />
-            Все новости
-          </Button>
+          <Link to="/news">
+            <Button className="bg-trust-blue hover:bg-trust-blue-dark">
+              <Icon name="Newspaper" size={20} className="mr-2" />
+              Все новости
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
