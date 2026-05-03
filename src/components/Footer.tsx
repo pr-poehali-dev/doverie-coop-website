@@ -140,7 +140,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Icon name="Mail" size={16} className="text-trust-green mr-2" />
-                <span>info@doveriye.ru</span>
+                <span>pomkh_doveriye@mail.com</span>
               </div>
               <div className="flex items-center">
                 <Icon
