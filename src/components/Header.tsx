@@ -23,13 +23,13 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm border-b border-trust-gray-light/30">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
               src="https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/b6627702-8976-4fa4-b262-f66320fc85b0.png"
               alt="Доверие"
-              className="h-10 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </Link>
 

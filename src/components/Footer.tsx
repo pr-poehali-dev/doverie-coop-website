@@ -7,13 +7,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-trust-blue to-trust-green rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">Д</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-white">Холдинг "Доверие"</h3>
-              </div>
+            <div className="mb-4">
+              <img
+                src="https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/b6627702-8976-4fa4-b262-f66320fc85b0.png"
+                alt="Доверие"
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-sm mb-4">
               Потребительское Общество Международный Кооперативный Холдинг
