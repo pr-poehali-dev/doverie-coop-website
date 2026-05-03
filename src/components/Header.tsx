@@ -25,17 +25,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-trust-blue to-trust-green rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">Д</span>
-            </div>
-            <div>
-              <h1 className="font-bold text-trust-dark-gray text-lg">
-                Холдинг "Доверие"
-              </h1>
-              <p className="text-xs text-trust-gray">Кооперативный холдинг</p>
-            </div>
-          </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src="https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/b6627702-8976-4fa4-b262-f66320fc85b0.png"
+              alt="Доверие"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
