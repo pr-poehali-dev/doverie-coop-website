@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Icon from "@/components/ui/icon";
@@ -231,6 +232,49 @@ const Projects = () => {
 
       {/* Grid */}
       <div className="container mx-auto px-4 py-12">
+        {/* Flagship project */}
+        {(activeCategory === "Все" || activeCategory === "Туризм") && (
+          <Link to="/projects/slavny-grad" className="block mb-6 group">
+            <div className="relative bg-gradient-to-br from-trust-dark-gray via-[#1b3a20] to-[#1a3060] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-trust-green blur-3xl" />
+                <div className="absolute bottom-0 right-0 w-48 h-48 rounded-full bg-trust-blue blur-3xl" />
+              </div>
+              <div className="relative p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6">
+                <div className="flex-1">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="inline-flex items-center gap-1.5 bg-trust-green/20 border border-trust-green/30 text-green-300 text-xs px-3 py-1 rounded-full">
+                      <Icon name="Star" size={11} />Флагманский проект
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">
+                      <Icon name="MapPin" size={11} />Московская область
+                    </span>
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Кластер «Славный Град»</h2>
+                  <p className="text-green-100 text-sm leading-relaxed max-w-xl mb-4">
+                    Инновационный Социально-Экономический Кластер: тематический парк, парк-отель, лечебный комплекс, ярмарочный комплекс, база отдыха и агрохозяйство на 150–200 га
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    {[
+                      { val: "188 млрд ₽", label: "инвестиции" },
+                      { val: "6–8 тыс.", label: "рабочих мест" },
+                      { val: "11", label: "объектов" },
+                    ].map((s, i) => (
+                      <div key={i} className="text-center">
+                        <div className="text-lg font-bold text-white">{s.val}</div>
+                        <div className="text-gray-400 text-xs">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-trust-green font-semibold text-sm group-hover:gap-3 transition-all flex-shrink-0">
+                  Подробнее о проекте
+                  <Icon name="ArrowRight" size={16} />
+                </div>
+              </div>
+            </div>
+          </Link>
+        )}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filtered.map((project) => {
             const c = colorMap[project.color];
