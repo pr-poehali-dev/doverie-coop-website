@@ -32,21 +32,32 @@ const ProjectsSection = () => {
               <div className="absolute bottom-0 right-0 w-48 h-48 rounded-full bg-trust-blue blur-3xl" />
             </div>
             <div className="relative p-8 md:p-10">
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="inline-flex items-center gap-1.5 bg-trust-green/20 border border-trust-green/30 text-green-300 text-xs px-3 py-1 rounded-full">
-                  <Icon name="Star" size={11} />Флагманский проект
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">
-                  <Icon name="MapPin" size={11} />Московская область
-                </span>
-              </div>
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex-1">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="inline-flex items-center gap-1.5 bg-trust-green/20 border border-trust-green/30 text-green-300 text-xs px-3 py-1 rounded-full">
+                      <Icon name="Star" size={11} />Флагманский проект
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">
+                      <Icon name="MapPin" size={11} />Московская область
+                    </span>
+                  </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Кластер «Славный Град»
-              </h3>
-              <p className="text-green-100 text-base leading-relaxed max-w-xl mb-6">
-                Единая система из 11 социально-экономических объектов на 150–200 га. Тематический парк мирового уровня, парк-отель, лечебный комплекс, ярмарки и агрохозяйство.
-              </p>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                    Кластер «Славный Град»
+                  </h3>
+                  <p className="text-green-100 text-base leading-relaxed mb-6">
+                    Единая система из 11 социально-экономических объектов на 150–200 га. Тематический парк мирового уровня, парк-отель, лечебный комплекс, ярмарки и агрохозяйство.
+                  </p>
+                </div>
+                <div className="w-full md:w-64 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0">
+                  <img
+                    src="https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/7feab339-0fdc-475c-8191-197a3171aba0.jpg"
+                    alt="Кластер Славный Град"
+                    className="w-full h-44 object-cover"
+                  />
+                </div>
+              </div>
 
               {/* Объекты */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">

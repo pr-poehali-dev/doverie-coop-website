@@ -456,6 +456,88 @@ const SlavnyGrad = () => {
         </div>
       </section>
 
+      {/* Фотогалерея */}
+      <section className="py-12 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-trust-dark-gray mb-2">Фотогалерея</h2>
+            <p className="text-gray-500 text-sm">Мероприятия и деловые встречи холдинга</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              {
+                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/b2373f13-fac1-4f2f-8b53-05e4638cb24e.jpg",
+                caption: "Форум туристических территорий"
+              },
+              {
+                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/151e7d90-a178-42e1-863b-af15bac67e8a.jpg",
+                caption: "Деловые переговоры"
+              },
+              {
+                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/1481943c-5e06-4792-8401-61b731b4341b.jpg",
+                caption: "Программа форума ФТТ"
+              },
+              {
+                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/43652167-4079-4757-9cde-f2563eecb944.jpg",
+                caption: "Пленарное заседание"
+              },
+            ].map((photo, i) => (
+              <div key={i} className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-md group">
+                <img
+                  src={photo.url}
+                  alt={photo.caption}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <p className="absolute bottom-0 left-0 right-0 text-white text-xs font-medium p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">{photo.caption}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Видео секция */}
+          <div className="mt-10">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-trust-dark-gray mb-1">Видеоматериалы</h3>
+              <p className="text-gray-500 text-sm">Концепция и презентация кластера «Славный Град»</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Концепция тематического парка",
+                  desc: "Обзор ключевых объектов и идеологии кластера",
+                  img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/7feab339-0fdc-475c-8191-197a3171aba0.jpg",
+                },
+                {
+                  title: "Инфраструктура и объекты",
+                  desc: "Парк-отель, лечебный комплекс, ярмарки и агрохозяйство",
+                  img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/49a5d08a-1070-44d3-8efd-4edb77549cb2.jpg",
+                },
+                {
+                  title: "Команда и партнёрство",
+                  desc: "Как стать участником и инвестором холдинга",
+                  img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/3ec56f61-0dfd-4e27-8521-dcec051d4f79.jpg",
+                },
+              ].map((video, i) => (
+                <div key={i} className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+                  <div className="relative aspect-video">
+                    <img src={video.img} alt={video.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                      <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-trust-green ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-trust-dark-gray text-sm mb-1">{video.title}</h4>
+                    <p className="text-gray-500 text-xs">{video.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Концепция */}
       <section className="py-14 px-4 bg-white">
         <div className="container mx-auto max-w-5xl">
