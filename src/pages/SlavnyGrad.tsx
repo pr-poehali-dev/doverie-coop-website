@@ -456,84 +456,70 @@ const SlavnyGrad = () => {
         </div>
       </section>
 
-      {/* Фотогалерея */}
+      {/* Визуализация объектов */}
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-trust-dark-gray mb-2">Фотогалерея</h2>
-            <p className="text-gray-500 text-sm">Мероприятия и деловые встречи холдинга</p>
+            <div className="inline-flex items-center gap-2 bg-trust-green/10 text-trust-green text-xs px-3 py-1 rounded-full mb-3">
+              <Icon name="Image" size={13} />Визуализация
+            </div>
+            <h2 className="text-2xl font-bold text-trust-dark-gray mb-2">Объекты кластера в деталях</h2>
+            <p className="text-gray-500 text-sm">Концепция ключевых объектов «Славного Града»</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/b2373f13-fac1-4f2f-8b53-05e4638cb24e.jpg",
-                caption: "Форум туристических территорий"
+                title: "Тематический парк «Славный Град»",
+                desc: "Древнерусский город с аттракционами, живыми шоу и аква-парком мирового уровня",
+                img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/52ae205d-c0eb-4d12-b9b9-a6252ae14a9b.jpg",
+                tag: "Объект 01",
               },
               {
-                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/151e7d90-a178-42e1-863b-af15bac67e8a.jpg",
-                caption: "Деловые переговоры"
+                title: "Торгово-Ярмарочный Комплекс",
+                desc: "Круглогодичные ярмарки с фермерской, народной и промышленной продукцией",
+                img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/4b0d70c8-a36c-4532-8372-20d505b18fb2.jpg",
+                tag: "Объект 02",
               },
               {
-                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/1481943c-5e06-4792-8401-61b731b4341b.jpg",
-                caption: "Программа форума ФТТ"
+                title: "База активного отдыха",
+                desc: "Глэмпинг, кемпинг, квадроциклы, снегоходы и парк диких животных",
+                img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/b77f1a81-dac5-4f84-884d-c886a2e29795.jpg",
+                tag: "Объект 03",
               },
               {
-                url: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/43652167-4079-4757-9cde-f2563eecb944.jpg",
-                caption: "Пленарное заседание"
+                title: "Парк-Отель со Спа",
+                desc: "4 корпуса, 20 коттеджей, ресторан, конференц-зал и спа-комплекс 4 звезды",
+                img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/75b89e20-3365-4737-9d4d-6cd6e66e462c.jpg",
+                tag: "Объект 05",
               },
-            ].map((photo, i) => (
-              <div key={i} className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-md group">
-                <img
-                  src={photo.url}
-                  alt={photo.caption}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <p className="absolute bottom-0 left-0 right-0 text-white text-xs font-medium p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">{photo.caption}</p>
+              {
+                title: "Лечебно-Оздоровительный Комплекс",
+                desc: "Грязелечение, климатотерапия, реабилитационный центр на 150 пациентов",
+                img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/e02b55a5-27ec-4564-a498-e9fbd14a7059.jpg",
+                tag: "Объект 06",
+              },
+              {
+                title: "Агропромышленное Хозяйство",
+                desc: "Теплицы, фермерское хозяйство, животноводство и рыбоводство",
+                img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/0ca23c13-4720-4604-8e1d-5aff9cfc9960.jpg",
+                tag: "Объект 08",
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group">
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-black/50 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">{item.tag}</span>
+                </div>
+                <div className="p-4 bg-white">
+                  <h4 className="font-bold text-trust-dark-gray text-sm mb-1 leading-tight">{item.title}</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
-          </div>
-
-          {/* Видео секция */}
-          <div className="mt-10">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-trust-dark-gray mb-1">Видеоматериалы</h3>
-              <p className="text-gray-500 text-sm">Концепция и презентация кластера «Славный Град»</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Концепция тематического парка",
-                  desc: "Обзор ключевых объектов и идеологии кластера",
-                  img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/7feab339-0fdc-475c-8191-197a3171aba0.jpg",
-                },
-                {
-                  title: "Инфраструктура и объекты",
-                  desc: "Парк-отель, лечебный комплекс, ярмарки и агрохозяйство",
-                  img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/49a5d08a-1070-44d3-8efd-4edb77549cb2.jpg",
-                },
-                {
-                  title: "Команда и партнёрство",
-                  desc: "Как стать участником и инвестором холдинга",
-                  img: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/files/3ec56f61-0dfd-4e27-8521-dcec051d4f79.jpg",
-                },
-              ].map((video, i) => (
-                <div key={i} className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
-                  <div className="relative aspect-video">
-                    <img src={video.img} alt={video.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-trust-green ml-1" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h4 className="font-bold text-trust-dark-gray text-sm mb-1">{video.title}</h4>
-                    <p className="text-gray-500 text-xs">{video.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

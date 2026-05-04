@@ -18,6 +18,7 @@ const NewsSection = () => {
         "Председатель совета холдинга «Доверие» принял участие в Форуме туристических территорий, прошедшем в московском спорткомплексе «Лужники». Форум объединил инвесторов, девелоперов, поставщиков оборудования и региональные администрации для развития туристической инфраструктуры России. В ходе мероприятия были установлены контакты с ключевыми участниками рынка туристических территорий, представляющими интерес для проекта «Славный Град».",
       date: "25 февраля 2025",
       category: "События",
+      image: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/b2373f13-fac1-4f2f-8b53-05e4638cb24e.jpg",
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ const NewsSection = () => {
         "По итогам Форума туристических территорий 2025 председатель совета холдинга провёл переговоры с компаниями-участниками в сферах глэмпинга, загородного строительства, благоустройства и туристической инфраструктуры. Полученные контакты с производителями домокомплектов, поставщиками инженерных решений и операторами туристических объектов позволят ускорить реализацию проекта «Славный Град» — кооперативного туристического поселения холдинга «Доверие».",
       date: "26 февраля 2025",
       category: "Проекты",
+      image: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/151e7d90-a178-42e1-863b-af15bac67e8a.jpg",
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ const NewsSection = () => {
         "Состоялось ежегодное собрание, на котором обсуждались итоги года и планы развития",
       date: "8 марта 2024",
       category: "События",
+      image: "https://cdn.poehali.dev/projects/a943c68c-4c6f-4e54-ac8c-c6ff5ebee83d/bucket/43652167-4079-4757-9cde-f2563eecb944.jpg",
     },
   ];
 
@@ -51,7 +54,16 @@ const NewsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {news.map((item) => (
-            <Card key={item.id} className="hover:shadow-lg transition-shadow">
+            <Card key={item.id} className="hover:shadow-lg transition-shadow overflow-hidden">
+              {item.image && (
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              )}
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm bg-trust-green/10 text-trust-green px-2 py-1 rounded">
