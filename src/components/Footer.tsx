@@ -122,14 +122,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-white mb-4">Контакты</h4>
             <div className="space-y-3 text-sm">
-              <div className="flex items-start">
-                <Icon
-                  name="MapPin"
-                  size={16}
-                  className="text-trust-green mr-2 mt-0.5 flex-shrink-0"
-                />
-                <span>г. Москва, ул. Примерная, д. 123</span>
-              </div>
+
               <div className="flex items-center">
                 <Icon
                   name="Phone"

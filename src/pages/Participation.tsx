@@ -158,7 +158,7 @@ const Participation = () => {
             {[
               { val: "1 385", label: "пайщиков" },
               { val: "8", label: "кооперативов" },
-              { val: "5 лет", label: "на рынке" },
+              { val: "11 лет", label: "на рынке" },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-3xl font-bold text-white">{s.val}</div>
